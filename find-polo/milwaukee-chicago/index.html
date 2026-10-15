@@ -62,7 +62,7 @@
     <p><strong>Where:</strong> N75 W30343 County Road VV, Hartland, WI 53029, about 30 miles west of downtown Milwaukee.<br>
     <strong>When:</strong> summer, roughly mid-May to the end of September.<br>
     <strong>Schedule:</strong> <a href="https://www.greatermilwaukeepolo.com">greatermilwaukeepolo.com</a></p>
-    <p>Club polo like this is the best kind for a first match: relaxed, close to the action, and easy to ask questions at. Bring a chair, and join the <a href="../../learn-polo/glossary/index.html#divot-stomp">divot stomp</a> at halftime.</p>
+    <p>Club polo like this is the best kind for a first match: relaxed, close to the action, and easy to ask questions at. Bring a chair, and join the <a href="../../learn-polo/glossary/index.html#divot-stomp" data-term="divot-stomp" aria-haspopup="dialog" aria-expanded="false">divot stomp</a> at halftime.</p>
   </div>
   <figure class="photo narrow-fig">
     <img src="../../assets/img/p-match-pony.webp" alt="A spectator in a pink suit and straw boater stands beside a chestnut polo pony on match day, with white tents behind" width="480" height="640">
@@ -78,7 +78,7 @@
   <h3>Barrington Hills Polo Club: the Kalaway Cup</h3>
   <p>Barrington Hills Polo Club, northwest of the city, plays both on grass and in an arena. Its grass field is open to members and their guests by invitation, so for most spectators the way in is its big public day: the <strong>LeCompte/Kalaway Cup</strong>, held on the first Saturday after Labor Day at Oakwood Farms in Barrington Hills.</p>
   <p>Expect a full afternoon: gates at 11, polo from noon, a parade of the hounds, Pony Club demonstrations, halftime entertainment, and hat and tailgate competitions, so <a href="../../learn-polo/what-to-wear-to-a-polo-match/index.html">dress for it</a>. Individual tickets are sold at the gate for cash only, children 12 and under get in free, and tailgate spaces must be reserved ahead.</p>
-  <p>The club&rsquo;s <a href="../../learn-polo/glossary/index.html#arena-polo">arena polo</a> is played at Fox Creek Stables, 23755 Milton Road, Wauconda, IL, which moves indoors for the winter. Details and the calendar are at <a href="http://www.barringtonhillspolo.com">barringtonhillspolo.com</a>.</p>
+  <p>The club&rsquo;s <a href="../../learn-polo/glossary/index.html#arena-polo" data-term="arena-polo" aria-haspopup="dialog" aria-expanded="false">arena polo</a> is played at Fox Creek Stables, 23755 Milton Road, Wauconda, IL, which moves indoors for the winter. Details and the calendar are at <a href="http://www.barringtonhillspolo.com">barringtonhillspolo.com</a>.</p>
 
   <h3>Oak Brook Polo Club: check before you go</h3>
   <p>Oak Brook, 17 miles from the Loop and home to polo since 1922, is the name most Chicagoans know. Its own website now says the club is closing its doors under its current leadership, so check <a href="https://www.oakbrookpoloclub.com">oakbrookpoloclub.com</a> for news before planning a trip.</p>
@@ -86,7 +86,7 @@
   <h3>Las Brisas Farm and Polo Club, Elgin</h3>
   <p>Further west, Las Brisas in Elgin hosts tournaments on the USPA calendar, including youth events. Look it up in the USPA&rsquo;s tournament listings, below, for dates.</p>
 
-  <p>Going for the first time? Read <a href="../../learn-polo/your-first-polo-match/index.html">your first polo match</a>, <a href="../../learn-polo/polo-etiquette/index.html">polo match etiquette</a> and <a href="../../learn-polo/what-is-polo/index.html">polo rules explained</a> first, and keep the <a href="../../learn-polo/glossary/index.html">polo terms and definitions</a> handy for when the announcer starts talking about <a href="../../learn-polo/glossary/index.html#chukker">chukkers</a> and <a href="../../learn-polo/glossary/index.html#handicap">handicaps</a>.</p>
+  <p>Going for the first time? Read <a href="../../learn-polo/your-first-polo-match/index.html">your first polo match</a>, <a href="../../learn-polo/polo-etiquette/index.html">polo match etiquette</a> and <a href="../../learn-polo/what-is-polo/index.html">polo rules explained</a> first, and keep the <a href="../../learn-polo/glossary/index.html">polo terms and definitions</a> handy for when the announcer starts talking about <a href="../../learn-polo/glossary/index.html#chukker" data-term="chukker" aria-haspopup="dialog" aria-expanded="false">chukkers</a> and <a href="../../learn-polo/glossary/index.html#handicap" data-term="handicap" aria-haspopup="dialog" aria-expanded="false">handicaps</a>.</p>
 </div>
 
 <div class="wrap">
@@ -97,6 +97,34 @@
     <a class="btn" href="https://www.amazon.com/dp/B07FK6QKRS">Get How to Talk Polo</a>
   </aside>
 </div>
+<script type="application/json" id="term-data">{"divot-stomp": {"term": "divot stomp", "pos": "noun", "def": "The halftime tradition of spectators walking onto the field to tread the torn-up turf back into place."}, "arena-polo": {"term": "arena polo", "pos": "noun", "def": "Polo played in a smaller walled arena, three players a side, with a larger inflated ball. Common in winter and at colleges."}, "chukker": {"term": "chukker", "pos": "noun", "def": "One period of play, about seven minutes long. A match runs four to six of them, and riders change ponies between them."}, "handicap": {"term": "handicap", "pos": "noun", "def": "A player's rating, from −2 to 10 goals, set by the national association. It measures skill, not goals scored. A team's handicap is the sum of its four players'."}}</script>
+<script>(function(){
+var d=JSON.parse(document.getElementById("term-data").textContent),pop,last;
+function close(){if(pop&&!pop.hidden){pop.hidden=true;last.setAttribute("aria-expanded","false");last.focus();}}
+document.addEventListener("click",function(e){
+  if(e.target.closest(".term-pop-close")){close();return;}
+  var a=e.target.closest("a[data-term]");
+  if(!a){if(pop&&!pop.hidden&&!pop.contains(e.target))close();return;}
+  e.preventDefault();
+  if(pop&&!pop.hidden&&last===a){close();return;}
+  if(pop&&last)last.setAttribute("aria-expanded","false");
+  var t=d[a.dataset.term];
+  if(!pop){pop=document.createElement("div");pop.className="term-pop";pop.setAttribute("role","dialog");
+    pop.innerHTML='<p class="term-pop-head"><span class="term-pop-word"></span><span class="pos"></span></p>'
+      +'<p class="term-pop-def"></p><p class="term-pop-more"><a>See it in the glossary &rarr;</a></p>'
+      +'<button type="button" class="term-pop-close">Close</button>';
+    document.body.appendChild(pop);}
+  pop.querySelector(".term-pop-word").textContent=t.term;
+  pop.querySelector(".pos").textContent=t.pos;
+  pop.querySelector(".term-pop-def").textContent=t.def;
+  pop.querySelector(".term-pop-more a").href=a.href;
+  pop.setAttribute("aria-label",t.term);
+  if(innerWidth>=600){var r=a.getBoundingClientRect();
+    pop.style.left=Math.max(8,Math.min(r.left,innerWidth-344))+scrollX+"px";pop.style.top=r.bottom+scrollY+8+"px";}
+  pop.hidden=false;last=a;a.setAttribute("aria-expanded","true");pop.querySelector(".term-pop-close").focus();
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+})();</script>
 </main>
 <aside class="feature wrap" aria-label="Don&rsquo;s Pick"><div class="feature-inner"><img src="../../assets/img/brand-dons-picks.webp" alt="" loading="lazy" width="480" height="480"><div><p class="kicker">Don&rsquo;s Pick &middot; affiliate link</p><h2>Compact binoculars</h2><p class="pick-why">The field is 300 yards long, and the action is often at the far end.</p><p class="feature-links"><a class="pick-link" href="https://www.ebay.com/sch/i.html?_nkw=compact+binoculars&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339208957&amp;toolid=10001&amp;mkevt=1&amp;customid=find-polo-milwaukee-chicago" rel="sponsored nofollow noopener" target="_blank">See it on eBay &rarr;</a> <a href="../../shop/index.html#match-day">More match-day essentials</a></p></div></div></aside>
 <section class="cta-band">

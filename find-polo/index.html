@@ -58,7 +58,7 @@
   <h2>How to find polo matches near you</h2>
   <ul class="inside">
     <li><strong>Start with the USPA.</strong> The United States Polo Association lists its member clubs in its <a href="https://www.uspolo.org/clubs">Find a Club</a> search, and its <a href="https://www.uspolo.org/tournaments">tournament calendar</a> at uspolo.org. If a club is near you, it&rsquo;s there.</li>
-    <li><strong>Follow the season.</strong> In the Midwest and the Northeast, polo is a summer sport. In Florida, home of the National Polo Center in Wellington, the big season runs through the winter. In colder states some clubs move to <a href="../learn-polo/glossary/index.html#arena-polo">arena polo</a> for the winter, in a smaller enclosed ring.</li>
+    <li><strong>Follow the season.</strong> In the Midwest and the Northeast, polo is a summer sport. In Florida, home of the National Polo Center in Wellington, the big season runs through the winter. In colder states some clubs move to <a href="../learn-polo/glossary/index.html#arena-polo" data-term="arena-polo" aria-haspopup="dialog" aria-expanded="false">arena polo</a> for the winter, in a smaller enclosed ring.</li>
     <li><strong>Check the club&rsquo;s social media the week of a match.</strong> Rain cancels polo; wet fields can&rsquo;t be played safely.</li>
     <li><strong>Look for the charity and cup days.</strong> Most clubs have one or two big public days a year. They&rsquo;re the easiest introduction and the best people-watching.</li>
   </ul>
@@ -80,6 +80,34 @@
     <a class="btn" href="https://www.amazon.com/dp/B07FK6QKRS">Get How to Talk Polo</a>
   </aside>
 </div>
+<script type="application/json" id="term-data">{"arena-polo": {"term": "arena polo", "pos": "noun", "def": "Polo played in a smaller walled arena, three players a side, with a larger inflated ball. Common in winter and at colleges."}}</script>
+<script>(function(){
+var d=JSON.parse(document.getElementById("term-data").textContent),pop,last;
+function close(){if(pop&&!pop.hidden){pop.hidden=true;last.setAttribute("aria-expanded","false");last.focus();}}
+document.addEventListener("click",function(e){
+  if(e.target.closest(".term-pop-close")){close();return;}
+  var a=e.target.closest("a[data-term]");
+  if(!a){if(pop&&!pop.hidden&&!pop.contains(e.target))close();return;}
+  e.preventDefault();
+  if(pop&&!pop.hidden&&last===a){close();return;}
+  if(pop&&last)last.setAttribute("aria-expanded","false");
+  var t=d[a.dataset.term];
+  if(!pop){pop=document.createElement("div");pop.className="term-pop";pop.setAttribute("role","dialog");
+    pop.innerHTML='<p class="term-pop-head"><span class="term-pop-word"></span><span class="pos"></span></p>'
+      +'<p class="term-pop-def"></p><p class="term-pop-more"><a>See it in the glossary &rarr;</a></p>'
+      +'<button type="button" class="term-pop-close">Close</button>';
+    document.body.appendChild(pop);}
+  pop.querySelector(".term-pop-word").textContent=t.term;
+  pop.querySelector(".pos").textContent=t.pos;
+  pop.querySelector(".term-pop-def").textContent=t.def;
+  pop.querySelector(".term-pop-more a").href=a.href;
+  pop.setAttribute("aria-label",t.term);
+  if(innerWidth>=600){var r=a.getBoundingClientRect();
+    pop.style.left=Math.max(8,Math.min(r.left,innerWidth-344))+scrollX+"px";pop.style.top=r.bottom+scrollY+8+"px";}
+  pop.hidden=false;last=a;a.setAttribute("aria-expanded","true");pop.querySelector(".term-pop-close").focus();
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+})();</script>
 </main>
 
 <section class="cta-band">

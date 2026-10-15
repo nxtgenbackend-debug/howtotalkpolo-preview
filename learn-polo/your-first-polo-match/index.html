@@ -56,14 +56,14 @@
 
 <div class="wrap-narrow prose">
   <h2>How long is a polo match?</h2>
-  <p>A <a href="../../learn-polo/glossary/index.html#chukker">chukker</a> is about seven minutes of play. Most club matches play four of them, and the top level plays six. Add the breaks between chukkers, a longer halftime and the clock stopping for fouls, and a club match runs about an hour and a half to two hours from the first throw-in to the trophies. Many people come early and make an afternoon of it.</p>
+  <p>A <a href="../../learn-polo/glossary/index.html#chukker" data-term="chukker" aria-haspopup="dialog" aria-expanded="false">chukker</a> is about seven minutes of play. Most club matches play four of them, and the top level plays six. Add the breaks between chukkers, a longer halftime and the clock stopping for fouls, and a club match runs about an hour and a half to two hours from the first throw-in to the trophies. Many people come early and make an afternoon of it.</p>
 
   <h2>What happens at a polo match</h2>
   <ul class="inside">
-    <li><strong>Before the start:</strong> find a spot along the sideline and watch the ponies being readied on the <a href="../../learn-polo/glossary/index.html#pony-line">pony line</a>.</li>
-    <li><strong>The throw-in:</strong> an <a href="../../learn-polo/glossary/index.html#umpire">umpire</a> rolls the ball in between the two teams, lined up side by side, to start play. It happens again after every goal, and the teams switch ends.</li>
+    <li><strong>Before the start:</strong> find a spot along the sideline and watch the ponies being readied on the <a href="../../learn-polo/glossary/index.html#pony-line" data-term="pony-line" aria-haspopup="dialog" aria-expanded="false">pony line</a>.</li>
+    <li><strong>The throw-in:</strong> an <a href="../../learn-polo/glossary/index.html#umpire" data-term="umpire" aria-haspopup="dialog" aria-expanded="false">umpire</a> rolls the ball in between the two teams, lined up side by side, to start play. It happens again after every goal, and the teams switch ends.</li>
     <li><strong>Fresh ponies:</strong> between chukkers the players change horses, which is why one player brings several ponies to a match.</li>
-    <li><strong>Halftime:</strong> the announcer invites everyone onto the field for the <a href="../../learn-polo/glossary/index.html#divot-stomp">divot stomp</a>, pressing the torn-up turf back into place.</li>
+    <li><strong>Halftime:</strong> the announcer invites everyone onto the field for the <a href="../../learn-polo/glossary/index.html#divot-stomp" data-term="divot-stomp" aria-haspopup="dialog" aria-expanded="false">divot stomp</a>, pressing the torn-up turf back into place.</li>
     <li><strong>The trophies:</strong> stay for the presentation after the last chukker. It&rsquo;s short, and the players often stop to talk to fans afterwards.</li>
   </ul>
   <p>Listen to the announcer throughout. Explaining the fouls and the players to newcomers is half the job, and it&rsquo;s exactly what Don Lubner did from the booth at the Milwaukee Polo Club.</p>
@@ -92,6 +92,34 @@
     <a class="btn" href="https://www.amazon.com/dp/B07FK6QKRS">Get How to Talk Polo</a>
   </aside>
 </div>
+<script type="application/json" id="term-data">{"chukker": {"term": "chukker", "pos": "noun", "def": "One period of play, about seven minutes long. A match runs four to six of them, and riders change ponies between them."}, "pony-line": {"term": "pony line", "pos": "noun", "def": "The row of ponies, held by grooms beside the field, waiting for their next chukker."}, "umpire": {"term": "umpire", "pos": "noun", "def": "One of the two officials on horseback who ride with the play and call the fouls."}, "divot-stomp": {"term": "divot stomp", "pos": "noun", "def": "The halftime tradition of spectators walking onto the field to tread the torn-up turf back into place."}}</script>
+<script>(function(){
+var d=JSON.parse(document.getElementById("term-data").textContent),pop,last;
+function close(){if(pop&&!pop.hidden){pop.hidden=true;last.setAttribute("aria-expanded","false");last.focus();}}
+document.addEventListener("click",function(e){
+  if(e.target.closest(".term-pop-close")){close();return;}
+  var a=e.target.closest("a[data-term]");
+  if(!a){if(pop&&!pop.hidden&&!pop.contains(e.target))close();return;}
+  e.preventDefault();
+  if(pop&&!pop.hidden&&last===a){close();return;}
+  if(pop&&last)last.setAttribute("aria-expanded","false");
+  var t=d[a.dataset.term];
+  if(!pop){pop=document.createElement("div");pop.className="term-pop";pop.setAttribute("role","dialog");
+    pop.innerHTML='<p class="term-pop-head"><span class="term-pop-word"></span><span class="pos"></span></p>'
+      +'<p class="term-pop-def"></p><p class="term-pop-more"><a>See it in the glossary &rarr;</a></p>'
+      +'<button type="button" class="term-pop-close">Close</button>';
+    document.body.appendChild(pop);}
+  pop.querySelector(".term-pop-word").textContent=t.term;
+  pop.querySelector(".pos").textContent=t.pos;
+  pop.querySelector(".term-pop-def").textContent=t.def;
+  pop.querySelector(".term-pop-more a").href=a.href;
+  pop.setAttribute("aria-label",t.term);
+  if(innerWidth>=600){var r=a.getBoundingClientRect();
+    pop.style.left=Math.max(8,Math.min(r.left,innerWidth-344))+scrollX+"px";pop.style.top=r.bottom+scrollY+8+"px";}
+  pop.hidden=false;last=a;a.setAttribute("aria-expanded","true");pop.querySelector(".term-pop-close").focus();
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+})();</script>
 </main>
 
 <section class="cta-band">
