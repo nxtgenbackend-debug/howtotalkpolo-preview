@@ -520,3 +520,33 @@ a[data-term] { text-decoration-style: dotted; cursor: help; }
 .quiz-result .btn { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 .quiz-result .btn-line, .quiz-result .btn-soon { background: transparent; color: var(--gold); }
 .band-more { margin-top: var(--s3); }
+
+/* ---- Interactive polo field (What is polo?) ---- */
+.pf-tabs, .pf-players { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--s2); }
+.pf-tabs button, .pf-players button { min-height: 44px; padding: 0 14px; border: 1px solid var(--line); background: var(--paper);
+  color: var(--ground); font: 600 .72rem var(--ff-label); letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+  transition: background-color var(--t-ui-exit) var(--ease-ui), color var(--t-ui-exit) var(--ease-ui); }
+.pf-players button { min-width: 44px; padding: 0; font-size: .9rem; }
+.pf-tabs button:hover, .pf-players button:hover { border-color: var(--gold); transition-duration: var(--t-ui); }
+.pf-tabs button[aria-pressed="true"], .pf-players button[aria-pressed="true"] { background: var(--ground); border-color: var(--ground); color: var(--cream); }
+.pf-b circle { fill: var(--navy); }
+.pf-r circle { fill: var(--red); }
+.pf-p { transition: opacity .3s var(--ease-ui), transform .55s var(--ease-ui); }
+.pf-p[data-player] { cursor: pointer; }
+.pf-p.is-on circle, .pf:is([data-scene="line"], [data-scene="cross"], [data-scene="rideoff"], [data-scene="hook"]) .pf-b3 circle {
+  stroke: var(--gold); stroke-width: 3; }
+/* The players who aren't in the play step back */
+.pf:is([data-scene="line"], [data-scene="cross"], [data-scene="rideoff"], [data-scene="hook"]) .pf-p:not(.pf-b3):not(.pf-r2),
+.pf[data-scene="field"] .pf-p, .pf[data-scene="line"] .pf-r2 { opacity: .28; }
+/* Red 2 moves into each play */
+.pf[data-scene="cross"] .pf-r2 { transform: translate(66px, -15px); }
+.pf[data-scene="rideoff"] .pf-r2 { transform: translate(21px, -3px); }
+.pf[data-scene="hook"] .pf-r2 { transform: translate(-3px, -16px); }
+.pf-layer { opacity: 0; pointer-events: none; transition: opacity .3s var(--ease-ui); }
+.pf[data-scene="field"] [data-show~="field"], .pf[data-scene="line"] [data-show~="line"], .pf[data-scene="cross"] [data-show~="cross"],
+.pf[data-scene="rideoff"] [data-show~="rideoff"], .pf[data-scene="hook"] [data-show~="hook"] { opacity: 1; }
+.field .pf-notes { font-style: normal; color: var(--ink); min-height: 7.5em; }
+.pf-notes p { margin: 0 0 .5em; }
+.pf:not(.is-live) .pf-players, .pf:not(.is-live) .pf-tip { display: none; }
+.pf[data-scene="cross"] .pf-line-label { opacity: 0; }  /* the foul marker sits there */
+@media (max-width: 599px) { .pf-tabs { gap: 6px; } .pf-tabs button { padding: 0 9px; font-size: .64rem; letter-spacing: .08em; } }

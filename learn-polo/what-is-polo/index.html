@@ -65,10 +65,22 @@
   <section>
     <h2>The polo field: the biggest in organised sport</h2>
     <p>A full polo field runs up to 300 yards long and 160 wide, about the size of nine American football fields. The goal posts are eight yards apart, with no crossbar.</p>
-    <figure class="field">
-      <svg viewBox="0 0 340 200" role="img" aria-labelledby="field-t field-d">
-        <title id="field-t">A polo field seen from above</title>
-        <desc id="field-d">A 300 by 160 yard field with goals at each end. The blue team's four positions spread from its own half toward the right-hand goal. A dashed gold line runs from the ball to the goal: the line of the ball. The blue number 3 rides along it; a red opponent rides alongside for a ride-off.</desc>
+    <figure class="field pf" id="polo-field" data-scene="team">
+      <div class="pf-tabs" role="group" aria-label="Show on the field" hidden>
+        <button type="button" data-scene="field">The field</button>
+        <button type="button" data-scene="team">The team</button>
+        <button type="button" data-scene="line">Line of the ball</button>
+        <button type="button" data-scene="cross">Crossing</button>
+        <button type="button" data-scene="rideoff">Ride-off</button>
+        <button type="button" data-scene="hook">Hook</button>
+      </div>
+      <svg class="pf-svg" viewBox="0 0 340 200" role="img" aria-labelledby="pf-t pf-d">
+        <title id="pf-t">A polo field seen from above</title>
+        <desc id="pf-d">A 300 by 160 yard field with a goal at each end. Blue's four riders attack the right-hand goal and red's four defend it. The buttons above change what the diagram shows, and the text below explains it.</desc>
+        <defs>
+          <marker id="pf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#fbf6ea"/></marker>
+          <marker id="pf-arrow-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#c9a24a"/></marker>
+        </defs>
         <rect x="20" y="20" width="300" height="160" fill="#6f8a4a" stroke="#3a3222" stroke-width="2"/>
         <g stroke="#f5ecd7" stroke-width="1" stroke-dasharray="3 4" opacity=".75">
           <line x1="50" y1="20" x2="50" y2="180"/><line x1="80" y1="20" x2="80" y2="180"/>
@@ -81,18 +93,84 @@
         </g>
         <g fill="#231d14"><rect x="16" y="94" width="4" height="4"/><rect x="16" y="102" width="4" height="4"/>
           <rect x="320" y="94" width="4" height="4"/><rect x="320" y="102" width="4" height="4"/></g>
-        <line x1="196" y1="132" x2="320" y2="100" stroke="#c9a24a" stroke-width="2.5" stroke-dasharray="6 4"/>
-        <text x="258" y="130" fill="#fbf6ea" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" transform="rotate(-14 258 130)">line of the ball</text>
+
+        <g class="pf-layer" data-show="field" font-family="system-ui, sans-serif" font-size="9" fill="#3a3222">
+          <line x1="22" y1="189" x2="318" y2="189" stroke="#3a3222" stroke-width="1.2" marker-start="url(#pf-arrow-gold)" marker-end="url(#pf-arrow-gold)"/>
+          <text x="170" y="199" text-anchor="middle">300 yards</text>
+          <line x1="330" y1="22" x2="330" y2="178" stroke="#3a3222" stroke-width="1.2" marker-start="url(#pf-arrow-gold)" marker-end="url(#pf-arrow-gold)"/>
+          <text x="336" y="100" text-anchor="middle" transform="rotate(90 336 100)">160 yards</text>
+          <text x="314" y="134" text-anchor="end" fill="#fbf6ea" font-weight="600">goal: posts 8 yd apart</text>
+        </g>
+
+        <g class="pf-layer" data-show="line cross rideoff hook">
+          <line x1="138" y1="147" x2="318" y2="100" stroke="#c9a24a" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#pf-arrow-gold)"/>
+          <text class="pf-line-label" x="262" y="129" fill="#fbf6ea" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle" transform="rotate(-14 262 129)">line of the ball</text>
+        </g>
+        <g class="pf-layer" data-show="line" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#fbf6ea" text-anchor="middle">
+          <text x="166" y="122">right of way</text>
+        </g>
+        <g class="pf-layer" data-show="cross" font-family="system-ui, sans-serif" font-size="10" font-weight="600">
+          <line x1="226" y1="143" x2="234" y2="104" stroke="#fbf6ea" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#pf-arrow)"/>
+          <g stroke="#a3231b" stroke-width="3.5" stroke-linecap="round"><line x1="224" y1="118" x2="235" y2="129"/><line x1="235" y1="118" x2="224" y2="129"/></g>
+          <text x="196" y="176" fill="#fbf6ea" text-anchor="middle">Red 2 cuts across: a foul</text>
+        </g>
+        <g class="pf-layer" data-show="rideoff" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#fbf6ea" text-anchor="middle">
+          <text x="196" y="178">shoulder to shoulder</text>
+        </g>
+
         <circle cx="196" cy="132" r="3.5" fill="#fbf6ea" stroke="#231d14"/>
         <g font-family="Georgia, serif" font-size="10" font-weight="700" text-anchor="middle" fill="#fbf6ea">
-          <circle cx="282" cy="84" r="9" fill="#1f2d4d"/><text x="282" y="88">1</text>
-          <circle cx="232" cy="66" r="9" fill="#1f2d4d"/><text x="232" y="70">2</text>
-          <circle cx="176" cy="137" r="9" fill="#1f2d4d"/><text x="176" y="141">3</text>
-          <circle cx="110" cy="96" r="9" fill="#1f2d4d"/><text x="110" y="100">4</text>
-          <circle cx="172" cy="156" r="9" fill="#a3231b"/><text x="172" y="160">2</text>
+          <g class="pf-p pf-b pf-b1" data-player="1"><circle cx="282" cy="84" r="9"/><text x="282" y="88">1</text></g>
+          <g class="pf-p pf-b pf-b2" data-player="2"><circle cx="232" cy="66" r="9"/><text x="232" y="70">2</text></g>
+          <g class="pf-p pf-b pf-b3" data-player="3"><circle cx="176" cy="137" r="9"/><text x="176" y="141">3</text></g>
+          <g class="pf-p pf-b pf-b4" data-player="4"><circle cx="110" cy="96" r="9"/><text x="110" y="100">4</text></g>
+          <g class="pf-p pf-r pf-r1"><circle cx="128" cy="108" r="9"/><text x="128" y="112">1</text></g>
+          <g class="pf-p pf-r pf-r2"><circle cx="160" cy="158" r="9"/><text x="160" y="162">2</text></g>
+          <g class="pf-p pf-r pf-r3"><circle cx="262" cy="152" r="9"/><text x="262" y="156">3</text></g>
+          <g class="pf-p pf-r pf-r4"><circle cx="300" cy="112" r="9"/><text x="300" y="116">4</text></g>
+        </g>
+        <g class="pf-layer" data-show="hook" font-family="system-ui, sans-serif" font-size="10" font-weight="600">
+          <g stroke-width="2.4" stroke-linecap="round"><line x1="180" y1="138" x2="203" y2="127" stroke="#fbf6ea"/><line x1="161" y1="146" x2="199" y2="125" stroke="#f0b8b0"/></g>
+          <text x="176" y="170" fill="#fbf6ea" text-anchor="middle">Red 2 hooks from behind</text>
         </g>
       </svg>
-      <figcaption>Blue attacks the right-hand goal. Blue&rsquo;s number 3 follows the line of the ball and has the right of way; red&rsquo;s number 2 rides alongside to try a ride-off.</figcaption>
+      <figcaption class="pf-notes" aria-live="polite">
+        <p data-note="field">A full polo field is up to <strong>300 yards long and 160 wide</strong>, about nine American football fields: the biggest in organised sport. The goal posts stand <a href="../../learn-polo/glossary/index.html#goal" data-term="goal" aria-haspopup="dialog" aria-expanded="false">eight yards apart</a> with no crossbar, and the marks at 30 and 60 yards are two of the spots <a href="../../learn-polo/glossary/index.html#penalty" data-term="penalty" aria-haspopup="dialog" aria-expanded="false">penalties</a> are taken from.</p>
+        <p data-note="team">Four riders a side, numbered 1 to 4 on their shirts. Here blue attacks the goal on the right and red defends it. <span class="pf-tip">Tap a number to see what each blue player does.</span></p>
+        <div class="pf-players" role="group" aria-label="Pick a player">
+          <button type="button" data-player="1">1</button><button type="button" data-player="2">2</button><button type="button" data-player="3">3</button><button type="button" data-player="4">4</button>
+        </div>
+        <p data-role="1"><strong>Number 1:</strong> the forward and main attacker, who lives near the other team&rsquo;s goal and marks their Number 4.</p>
+        <p data-role="2"><strong>Number 2:</strong> the workhorse, attacking and defending in turn, and the player most often in a <a href="../../learn-polo/glossary/index.html#ride-off" data-term="ride-off" aria-haspopup="dialog" aria-expanded="false">ride-off</a>.</p>
+        <p data-role="3"><strong>Number 3:</strong> usually the strongest player on the team, the playmaker who turns defence into attack from the middle of the field.</p>
+        <p data-role="4"><strong>Number 4:</strong> the <a href="../../learn-polo/glossary/index.html#back" data-term="back" aria-haspopup="dialog" aria-expanded="false">back</a>, who guards the goal and sends the ball forward to the Number 3.</p>
+        <p data-note="line">The ball leaves a path as it travels: the <a href="../../learn-polo/glossary/index.html#line-of-the-ball" data-term="line-of-the-ball" aria-haspopup="dialog" aria-expanded="false">line of the ball</a>, running forward and back. Blue&rsquo;s Number 3 is following it, so blue 3 has the <a href="../../learn-polo/glossary/index.html#right-of-way" data-term="right-of-way" aria-haspopup="dialog" aria-expanded="false">right of way</a>, and most of polo&rsquo;s rules exist to protect that.</p>
+        <p data-note="cross">Red&rsquo;s Number 2 rides across the line in front of blue 3. That&rsquo;s a <a href="../../learn-polo/glossary/index.html#cross" data-term="cross" aria-haspopup="dialog" aria-expanded="false">cross</a>, the foul at the heart of polo&rsquo;s rules, because at a gallop it is the most dangerous thing on the field. The umpires award a <a href="../../learn-polo/glossary/index.html#penalty" data-term="penalty" aria-haspopup="dialog" aria-expanded="false">penalty</a>.</p>
+        <p data-note="rideoff">Red can still win the ball fairly. In a <a href="../../learn-polo/glossary/index.html#ride-off" data-term="ride-off" aria-haspopup="dialog" aria-expanded="false">ride-off</a>, red 2 comes alongside blue 3, shoulder to shoulder, and pushes the pony off the line. Riding in at a safe angle is allowed; a dangerous angle is a <a href="../../learn-polo/glossary/index.html#foul" data-term="foul" aria-haspopup="dialog" aria-expanded="false">foul</a>.</p>
+        <p data-note="hook">Or red can <a href="../../learn-polo/glossary/index.html#hook" data-term="hook" aria-haspopup="dialog" aria-expanded="false">hook</a>: block blue 3&rsquo;s swing by catching the mallet with their own. It&rsquo;s allowed only from the same side as the swing, or from directly behind it.</p>
+      </figcaption>
+      <script>(function(){
+var f=document.getElementById("polo-field"),tabs=f.querySelector(".pf-tabs");
+tabs.hidden=false;f.classList.add("is-live");
+function pick(n){
+  f.querySelectorAll(".pf-p[data-player]").forEach(function(g){g.classList.toggle("is-on",g.dataset.player===n);});
+  f.querySelectorAll("[data-role]").forEach(function(p){p.hidden=p.dataset.role!==n;});
+  f.querySelectorAll(".pf-players button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.player===n);});
+}
+function show(scene){
+  f.dataset.scene=scene;
+  tabs.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.scene===scene);});
+  f.querySelectorAll("[data-note]").forEach(function(p){p.hidden=p.dataset.note!==scene;});
+  f.querySelector(".pf-players").hidden=scene!=="team";
+  pick(null);
+}
+f.addEventListener("click",function(e){
+  var b=e.target.closest("button[data-scene]");if(b){show(b.dataset.scene);return;}
+  var p=e.target.closest("[data-player]");
+  if(p){if(f.dataset.scene!=="team")show("team");pick(p.dataset.player);}
+});
+show("team");
+})();</script>
     </figure>
   </section>
 
@@ -135,6 +213,34 @@
   </aside>
   <p>Heard a word on the sideline you didn&rsquo;t know? Look it up in <a href="../../learn-polo/glossary/index.html">polo terms and definitions</a>: all 43, from appeal to USPA.</p>
 </div>
+<script type="application/json" id="term-data">{"goal": {"term": "goal", "pos": "noun", "def": "A point scored by hitting the ball between the opponents' posts, which stand eight yards apart. There is no crossbar, so height doesn't matter. After every goal the teams change ends."}, "penalty": {"term": "penalty", "pos": "noun", "def": "The free hit awarded after a foul, taken from 30, 40 or 60 yards out or from where the foul happened, depending on how serious it was. The most serious fouls award a goal outright."}, "ride-off": {"term": "ride-off", "pos": "noun", "def": "Two riders pressing shoulder to shoulder, each trying to push the other off the line of the ball."}, "back": {"term": "back", "pos": "noun", "def": "The Number 4, the team's last line of defence, who usually plays nearest their own goal."}, "line-of-the-ball": {"term": "line of the ball", "pos": "noun", "def": "The path the ball travels, extended forward and back. The rider following it has the right of way, and most of the rules exist to protect that."}, "right-of-way": {"term": "right of way", "pos": "noun", "def": "The right to ride along the line of the ball, which belongs to the player following it. No one may cross in front of them."}, "cross": {"term": "cross", "pos": "verb", "def": "To ride across the line of the ball in front of a player who has the right of way. The foul at the heart of polo's rules, because at a gallop it is the most dangerous."}, "foul": {"term": "foul", "pos": "noun", "def": "A breach of the rules, almost always about safety: crossing, dangerous riding or a dangerous swing of the mallet. Fouls are punished with penalties."}, "hook": {"term": "hook", "pos": "verb", "def": "To block an opponent's swing by catching their mallet with your own. Allowed only when you are on the same side as the swing, or directly behind it."}}</script>
+<script>(function(){
+var d=JSON.parse(document.getElementById("term-data").textContent),pop,last;
+function close(){if(pop&&!pop.hidden){pop.hidden=true;last.setAttribute("aria-expanded","false");last.focus();}}
+document.addEventListener("click",function(e){
+  if(e.target.closest(".term-pop-close")){close();return;}
+  var a=e.target.closest("a[data-term]");
+  if(!a){if(pop&&!pop.hidden&&!pop.contains(e.target))close();return;}
+  e.preventDefault();
+  if(pop&&!pop.hidden&&last===a){close();return;}
+  if(pop&&last)last.setAttribute("aria-expanded","false");
+  var t=d[a.dataset.term];
+  if(!pop){pop=document.createElement("div");pop.className="term-pop";pop.setAttribute("role","dialog");
+    pop.innerHTML='<p class="term-pop-head"><span class="term-pop-word"></span><span class="pos"></span></p>'
+      +'<p class="term-pop-def"></p><p class="term-pop-more"><a>See it in the glossary &rarr;</a></p>'
+      +'<button type="button" class="term-pop-close">Close</button>';
+    document.body.appendChild(pop);}
+  pop.querySelector(".term-pop-word").textContent=t.term;
+  pop.querySelector(".pos").textContent=t.pos;
+  pop.querySelector(".term-pop-def").textContent=t.def;
+  pop.querySelector(".term-pop-more a").href=a.href;
+  pop.setAttribute("aria-label",t.term);
+  if(innerWidth>=600){var r=a.getBoundingClientRect();
+    pop.style.left=Math.max(8,Math.min(r.left,innerWidth-344))+scrollX+"px";pop.style.top=r.bottom+scrollY+8+"px";}
+  pop.hidden=false;last=a;a.setAttribute("aria-expanded","true");pop.querySelector(".term-pop-close").focus();
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+})();</script>
 </main>
 <aside class="feature wrap" aria-label="Don&rsquo;s Pick"><div class="feature-inner"><img src="../../assets/img/brand-dons-picks.webp" alt="" loading="lazy" width="480" height="480"><div><p class="kicker">Don&rsquo;s Pick &middot; affiliate link</p><h2>Compact binoculars</h2><p class="pick-why">The field is 300 yards long, and the action is often at the far end.</p><p class="feature-links"><a class="pick-link" href="https://www.ebay.com/sch/i.html?_nkw=compact+binoculars&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339208957&amp;toolid=10001&amp;mkevt=1&amp;customid=learn-polo-what-is-polo" rel="sponsored nofollow noopener" target="_blank">See it on eBay &rarr;</a> <a href="../../shop/index.html#match-day">More match-day essentials</a></p></div></div></aside>
 <section class="cta-band">
