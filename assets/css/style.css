@@ -10,7 +10,7 @@
 /* ---- Fonts (Charles, 2026-10-14): Ironick for main page headings only, in small caps;
    Optima for subheadings (the book's chapter quotes); Palatino for reading. Optima and
    Palatino come with the reader's system (Mac/iPhone have both, Windows has Palatino),
-   so nothing downloads; the stacks fall back to close cousins elsewhere. ---- */
+   so nothing downloads; the stacks fall back to close cousins elsewhere (DECISIONS #70). ---- */
 /* Ironick NF (Nick's Fonts, 1001fonts FFC licence: commercial use incl. websites, NO
    modification). Served as the original .otf, byte for byte: never convert or subset it.
    One weight only, so the weight range below stops browsers faking a bold. */
