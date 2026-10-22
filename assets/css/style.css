@@ -583,3 +583,9 @@ a[data-term] { text-decoration-style: dotted; cursor: help; }
   .ph-inner { justify-items: start; padding-block: var(--s4) var(--s5); }
   .ph-credit { position: static; padding: 0 16px 20px; text-shadow: none; color: var(--dim); }
 }
+
+/* ---- The boater logo (Charles, 2026-10-22): header and footer ---- */
+.brand-logo { display: block; width: auto; height: 60px; }
+.site-head .head-inner { padding-block: 8px; }
+.site-foot .brand-logo { height: 84px; }
+@media (max-width: 599px) { .brand-logo { height: 50px; } }
