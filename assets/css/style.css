@@ -595,3 +595,20 @@ a[data-term] { text-decoration-style: dotted; cursor: help; }
 .merch-band { margin-block: 0 var(--s5); padding: var(--s4); background: var(--paper); border: 1px solid var(--line);
   outline: 1px solid var(--gold-soft); outline-offset: -8px; }
 .merch-band h2 { margin-bottom: .3em; }
+
+/* ---- Facebook band (home), Facebook feed and Polo news (Posts page) ---- */
+.social-band { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); align-items: center; justify-content: space-between;
+  margin-block: var(--s5); padding: var(--s4); background: var(--navy); color: var(--paper); }
+.social-band h2 { color: var(--paper); margin-bottom: .2em; }
+.social-band p { margin: 0; }
+.social-band .kicker { color: var(--gold); margin-bottom: .6em; }
+.social-band .btn { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.social-band .btn-line { background: transparent; color: var(--paper); border-color: var(--paper); }
+.social-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.fb-feed, .news { margin-block: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--line); }
+.fb-slot { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: var(--s2); }
+.news-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.news-list a { font: 600 1.05rem/1.4 var(--ff-head); }
+.news-meta { display: block; margin-top: .2em; color: var(--muted); font-size: .88rem; }
+.contact-email { font: 600 1.3rem var(--ff-head); }
+@media (max-width: 599px) { .social-actions .btn { flex: 1 1 100%; } }
