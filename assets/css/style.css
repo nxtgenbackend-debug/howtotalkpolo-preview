@@ -589,3 +589,9 @@ a[data-term] { text-decoration-style: dotted; cursor: help; }
 .site-head .head-inner { padding-block: 8px; }
 .site-foot .brand-logo { height: 84px; }
 @media (max-width: 599px) { .brand-logo { height: 50px; } }
+
+/* ---- Merch (Printful + Stripe store, DECISIONS #89) ---- */
+.merch-wrap { margin-bottom: var(--s6); min-height: 40vh; }
+.merch-band { margin-block: 0 var(--s5); padding: var(--s4); background: var(--paper); border: 1px solid var(--line);
+  outline: 1px solid var(--gold-soft); outline-offset: -8px; }
+.merch-band h2 { margin-bottom: .3em; }
