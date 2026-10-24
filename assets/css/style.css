@@ -448,8 +448,14 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .video-label { font: 600 .78rem var(--ff-label); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
 .video-link:hover .video-label { color: var(--cream); }
 .video figcaption { margin-top: .5em; color: var(--muted); font-size: .9rem; }
-.prose .gallery { margin: var(--s4) 0; }
-.prose .gallery figure { margin: 0; }
+/* Post galleries: one row, every photo the same height and its own width (a square logo
+   beside a wide photo no longer leaves a gap). Captions don't widen their photo. */
+.prose .gallery { margin: var(--s4) 0; display: flex; flex-wrap: wrap; gap: var(--s3); }
+.prose .gallery figure { margin: 0; flex: 1 1 auto; }
+.prose .gallery img { height: 240px; width: 100%; object-fit: cover; }
+.prose .gallery figcaption { width: 0; min-width: 100%; }
+@media (max-width: 599px) { .prose .gallery img { height: auto; } }
+.post-cover { margin-bottom: var(--s4); }
 @media (max-width: 599px) { .actions > .btn { flex: 1 1 100%; } }
 
 /* ---- eBay shelves: eBay's listings in the site's own frame (build.py shelf_html) ---- */
