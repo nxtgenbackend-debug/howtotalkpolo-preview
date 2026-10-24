@@ -416,7 +416,15 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .site-foot nav a { color: var(--dim); font: 600 .72rem var(--ff-label); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; padding-block: 12px; }
 .site-foot nav a:hover { color: var(--gold); }
 .socials { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 18px; }
-.socials a { color: var(--gold); font: 600 .74rem var(--ff-label); letter-spacing: .14em; text-transform: uppercase; }
+.socials a { color: var(--gold); font: 600 .74rem var(--ff-label); letter-spacing: .14em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; text-decoration: none; }
+.socials a:hover { color: var(--cream); }
+.socials svg { flex: none; }
+/* Header: icons only, beside the nav (and beside Menu on phones). */
+.socials-head { margin: 0 0 0 auto; gap: 4px; }
+.socials-head a { color: var(--dim); min-width: 44px; justify-content: center; }
+.socials-head a:hover { color: var(--gold); }
+.site-head .head-inner > .nav-wide + .socials-head { margin-left: 0; }
 .fine { font: .82rem/1.5 var(--ff-body); color: #a99d80; padding-block: var(--s4); margin: 0; border-top: 1px solid rgb(201 162 74 / .18); }
 @media (min-width: 880px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
 
@@ -608,16 +616,13 @@ a[data-term] { text-decoration-style: dotted; cursor: help; }
 .social-band h2 { color: var(--paper); margin-bottom: .2em; }
 .social-band p { margin: 0; }
 .social-band .kicker { color: var(--gold); margin-bottom: .6em; }
-.social-band .btn { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-.social-band .btn-line { background: transparent; color: var(--paper); border-color: var(--paper); }
-.social-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.fb-feed, .news { margin-block: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--line); }
-.fb-slot { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: var(--s2); }
+.social-band .socials { margin: 0; gap: 10px 28px; }
+.social-band .socials a { font-size: .8rem; }
+.news { margin-block: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--line); }
 .news-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
 .news-list a { font: 600 1.05rem/1.4 var(--ff-head); }
 .news-meta { display: block; margin-top: .2em; color: var(--muted); font-size: .88rem; }
 .contact-email { font: 600 1.3rem var(--ff-head); }
-@media (max-width: 599px) { .social-actions .btn { flex: 1 1 100%; } }
 
 /* Post types (DECISIONS #99): the club fact card, the book/deal buy box, the preview-only
    Facebook caption. Same paper-and-keyline language as the plates and pick labels. */
@@ -647,3 +652,10 @@ a[data-term] { text-decoration-style: dotted; cursor: help; }
   .club-facts dd { margin-bottom: 8px; }
   .buy-box .buy-cover { max-width: 180px; }
 }
+
+/* Advertiser banners (DECISIONS #100): one at a time, framed and labelled, centred at its own size. */
+.ad-banner { margin: var(--s4) 0; padding: var(--s3); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  text-align: center; }
+.ad-banner .kicker { margin: 0 0 10px; }
+.ad-banner img { display: inline-block; max-width: 100%; height: auto; }
+.ad-banner.house p:last-child { margin: 0; font: 600 1.05rem/1.4 var(--ff-head); }
