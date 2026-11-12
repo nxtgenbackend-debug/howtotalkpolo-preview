@@ -1,0 +1,22 @@
+# Cloudflare Pages headers (the live host, DECISIONS #108). .htaccess beside it is the Bluehost fallback.
+# HTTPS and www -> howtotalkpolo.com are Cloudflare settings, not files: see HANDOFF Phase E.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+  X-Frame-Options: DENY
+
+# CSS carries ?v= in every page, so 7 days is safe.
+/assets/css/*
+  Cache-Control: public, max-age=604800
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+
+# Keep the pages.dev copy out of search results; only howtotalkpolo.com should be indexed.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
